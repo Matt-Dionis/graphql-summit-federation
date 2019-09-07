@@ -1,0 +1,27 @@
+{
+  "name": "federation-gateway",
+  "description": "An Apollo Gateway example which combines a Location Service and a Weather Service.",
+  "main": "gateway.js",
+  "license": "MIT",
+  "keywords": [
+    "federation",
+    "apollo",
+    "graphql"
+  ],
+  "scripts": {
+    "start-gateway": "nodemon gateway.js",
+    "start-service-locations": "nodemon services/locations/index.js",
+    "start-service-weather": "nodemon services/weather/index.js",
+    "start-services": "concurrently \"npm:start-service-*\""
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.2",
+    "nodemon": "1.18.4"
+  },
+  "dependencies": {
+    "@apollo/gateway": "0.6.7",
+    "apollo-server": "2.6.4",
+    "dotenv": "^8.1.0",
+    "graphql": "14.3.1"
+  }
+}
